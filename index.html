@@ -76,7 +76,7 @@ input { max-width: 100%; margin: 10px 0; }
     <br>
     <input type="file" id="image" accept="image/*">
     <br><br>
-    <button onclick="uploadMeme()">Upload Meme</button>
+    <button onclick="<button id="uploadBtn">📤 Upload Meme</button>()">Upload Meme</button>
   </section>
 
   <h2 id="trending">🔥 Latest Memes</h2>
@@ -90,7 +90,7 @@ input { max-width: 100%; margin: 10px 0; }
     </div>
   </div>
 </main>
-  <button onclick="uploadMeme()">Upload Meme</button>
+  <button onclick="<button id="uploadBtn">📤 Upload Meme</button>()">Upload Meme</button>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase.js"></script>
 <script>
@@ -101,7 +101,7 @@ function likeMeme(button) {
   likes.textContent = count + " Likes";
 }
 
-function uploadMeme() {
+function <button id="uploadBtn">📤 Upload Meme</button>() {
   const title = document.getElementById("title").value;
   const file = document.getElementById("image").files[0];
 
@@ -141,6 +141,9 @@ function uploadMeme() {
   document.getElementById("image").value = "";
 }
 </script>
+  document.getElementById("uploadBtn").addEventListener("click", function() {
+  alert("Upload button is working!");
+});
 </body>
 </html>
 
