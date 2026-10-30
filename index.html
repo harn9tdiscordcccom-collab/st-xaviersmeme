@@ -57,26 +57,7 @@ input { max-width: 100%; margin: 10px 0; }
 </style>
 </head>
 
-async function testSupabase() {
-  const status = document.getElementById("connectionStatus");
-
-  try {
-    const { error } = await supabase
-      .from("memes")
-      .select("id")
-      .limit(1);
-
-    if (error) throw error;
-
-    status.textContent = "✅ Supabase connected!";
-  } catch (error) {
-    status.textContent = "❌ Connection error: " + error.message;
-  }
-}
-
-testSupabase();
-
-
+  <body>
 <header>
   <h1>😂 MemeHub</h1>
   <p>Share memes. Spread laughter.</p>
