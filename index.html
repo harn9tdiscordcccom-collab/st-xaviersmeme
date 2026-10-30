@@ -145,5 +145,25 @@ function <button id="uploadBtn">📤 Upload Meme</button>() {
   alert("Upload button is working!");
 });
 </body>
+  
+async function testSupabase() {
+  const status = document.getElementById("connectionStatus");
+
+  try {
+    const { error } = await supabase
+      .from("memes")
+      .select("id")
+      .limit(1);
+
+    if (error) throw error;
+
+    status.textContent = "✅ Supabase connected!";
+  } catch (error) {
+    status.textContent = "❌ Connection error: " + error.message;
+  }
+}
+
+testSupabase();
+
 </html>
 
